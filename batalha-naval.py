@@ -39,6 +39,7 @@ def gerarNavios() :
 
         if (gabarito[linhaNavio][colunaNavio] == 0) :
             gabarito[linhaNavio][colunaNavio] = 1
+            
             contadorDeNavios += 1
 
 def solicitarJogada(tipo) :
@@ -47,17 +48,17 @@ def solicitarJogada(tipo) :
     else :
         quantidade = quantidadeDeColunas
 
-    repeat = True
-    while (repeat) :
+    repetir = True
+    while (repetir) :
         mensagem = "Digite a " + tipo + " (1 à " + str(quantidade) + "): "
 
         valor = int(input(mensagem)) - 1
 
         if (valor < 0 or valor >= quantidade) :
-            repeat = True
+            repetir = True
             print("Faça uma jogada válida!!")
         else :
-            repeat = False
+            repetir = False
 
     return valor
 
@@ -68,7 +69,7 @@ def jogadaRepetida(linha, coluna) :
         return False
 
 def desenhaMapa() :
-    print("")
+    print("\n")
 
     numerosColunas = ''
 
@@ -93,7 +94,7 @@ def desenhaMapa() :
 
         print(linha)
 
-    print("")
+    print("\n")
 
 def continuarJogo() :
     if (contadorDeAcertos == quantidadeDeNavios) :
@@ -121,16 +122,20 @@ while (continuarJogo()) :
 
         if (jogadaRepetida(linha, coluna)) :
             print("Você já fez essa jogada")
+
             repetir = True
         else :
             repetir = False
 
     if (gabarito[linha][coluna] == 1) :
         mapa[linha][coluna] = "x"
+
         contadorDeAcertos += 1
+
         print("Acertou!")
     else :
         mapa[linha][coluna] = "o"
+        
         print("Errou!")
 
 # Fim do jogo
