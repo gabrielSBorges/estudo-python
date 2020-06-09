@@ -43,5 +43,5 @@ plt.yticks(yint)
 
 # 3 - Mostra/salva o gráfico:
 fig.set_size_inches(12, 6)
-fig.savefig("./dados/diretor_mais_premiado.png", dpi=100)
+fig.savefig("./dados/diretores_mais_premiados.png", dpi=100)
 plt.show()
